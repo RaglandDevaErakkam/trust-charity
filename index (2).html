@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puthu Ithayam Arakattallai – Building Hope. Creating Opportunities.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #003527;
+    --forest-2: #174c3c;
+    --forest-3: #116b4d;
+    --mint: #9ff0ca;
+    --mint-2: #a2f3cc;
+    --mint-ink: #197051;
+    --cream: #ecf6ed;
+    --cream-2: #e6f1e7;
+    --ink: #151e18;
+    --body: #404945;
+    --muted: #707974;
+    --line: rgba(192, 201, 195, 0.3);
+    --sage: #87bba7;
+    --white: #ffffff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+  body { font-family: 'Inter', system-ui, sans-serif; color: var(--body); background: var(--white); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, h4, .display { font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; color: var(--forest); }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+  button, input, select, textarea { font: inherit; }
+
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+  .section { padding: 80px 0; border-bottom: 1px solid rgba(192,201,195,0.2); }
+  .eyebrow { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.6px; text-transform: uppercase; color: var(--forest-3); }
+  .h2 { font-weight: 700; font-size: 40px; letter-spacing: -1px; line-height: 48px; color: var(--forest); }
+  .lead { font-size: 16px; line-height: 26px; }
+  .center { text-align: center; }
+  .head { max-width: 768px; margin: 0 auto 48px; display: flex; flex-direction: column; gap: 12px; align-items: center; text-align: center; }
+
+  .pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.5px; text-transform: uppercase; background: rgba(159,240,202,0.6); color: var(--mint-ink); border: 1px solid rgba(17,107,77,0.2); }
+  .pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--forest-3); }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 30px; border-radius: 999px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 14px; border: 1px solid transparent; cursor: pointer; transition: transform .15s ease, background .2s ease; white-space: nowrap; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-dark { background: var(--forest-2); color: #fff; box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1); }
+  .btn-dark:hover { background: var(--forest); }
+  .btn-light { background: #fff; color: var(--forest-2); border-color: rgba(23,76,60,.3); }
+  .btn-outline { background: transparent; color: var(--forest); border-color: #c0c9c3; }
+  .btn-mint { background: var(--mint-2); color: #002114; font-weight: 700; }
+  .btn-ghost { background: transparent; color: var(--forest-2); border-color: var(--forest-2); }
+  .btn-sm { padding: 9px 17px; font-size: 13px; border-radius: 8px; background: var(--cream-2); color: var(--forest); border-color: rgba(192,201,195,.5); font-weight: 600; }
+  .link { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 14px; color: var(--forest-2); display: inline-flex; gap: 6px; align-items: center; text-decoration: underline; text-underline-offset: 3px; }
+  .link.plain { text-decoration: none; }
+  .link.plain:hover { text-decoration: underline; }
+
+  /* ---------- Header ---------- */
+  .site-header { position: sticky; top: 0; z-index: 50; background: rgba(242,252,242,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); box-shadow: 0 1px 2px rgba(0,0,0,.05); }
+  .nav { height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+  .logo { width: 48px; height: 48px; border-radius: 50%; background: #fff; overflow: hidden; flex-shrink: 0; box-shadow: 0 1px 2px rgba(0,0,0,.05); }
+  .logo img { width: 100%; height: 100%; object-fit: contain; padding: 2px; }
+  .brand-name { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -.45px; color: var(--forest); white-space: nowrap; }
+  .brand-tag { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; font-size: 12px; letter-spacing: .5px; color: var(--body); white-space: nowrap; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; font-size: 14px; color: var(--body); padding-bottom: 6px; }
+  .nav-links a.active { font-weight: 600; color: var(--forest); border-bottom: 2px solid var(--forest); }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .nav-actions .btn { padding: 9px 17px; font-size: 14px; }
+  .nav-toggle { display: none; background: none; border: 0; font-size: 26px; color: var(--forest); cursor: pointer; }
+
+  /* ---------- Hero ---------- */
+  .hero { background: #ecf6ed; border-bottom: 1px solid rgba(192,201,195,.2); padding: 96px 0 97px; }
+  .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+  .hero h1 { font-weight: 700; font-size: 56px; line-height: 64px; letter-spacing: -1.4px; margin: 24px 0; }
+  .hero p.lead { max-width: 672px; font-size: 18px; line-height: 30px; letter-spacing: -.18px; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+  .tagline { font-style: italic; font-size: 14px; color: var(--muted); margin-top: 24px; }
+  .trust-strip { margin-top: 24px; padding-top: 25px; border-top: 1px solid rgba(192,201,195,.3); display: flex; flex-wrap: wrap; gap: 24px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 12px; color: var(--body); letter-spacing: .4px; }
+  .trust-strip span::before { content: "✓"; color: var(--forest-3); margin-right: 6px; }
+  .photo-frame { position: relative; border-radius: 12px; border: 4px solid #fff; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,.25); background: #d9e6da; aspect-ratio: 478 / 460; }
+  .photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+  .photo-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,53,39,.7), rgba(0,53,39,0) 50%); pointer-events: none; }
+  .impact-card { position: absolute; left: 24px; right: 24px; bottom: 24px; z-index: 2; background: rgba(255,255,255,.95); border: 1px solid var(--line); border-radius: 8px; padding: 17px; display: flex; gap: 12px; align-items: center; box-shadow: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -4px rgba(0,0,0,.1); }
+  .impact-card .ico-circle { width: 40px; height: 40px; border-radius: 50%; background: var(--mint); display: grid; place-items: center; flex-shrink: 0; color: var(--forest); font-size: 16px; }
+  .impact-card h4 { font-size: 18px; letter-spacing: -.09px; line-height: 26px; }
+  .impact-card p { font-size: 14px; line-height: 22px; }
+
+  /* ---------- About ---------- */
+  .about-intro { display: flex; flex-direction: column; gap: 12px; margin-bottom: 48px; }
+  .about-intro .h2 { margin-top: 4px; }
+  .about-intro p { max-width: 896px; font-size: 18px; line-height: 30px; letter-spacing: -.18px; }
+  .about-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 48px; align-items: center; }
+  .frame-soft { background: #e6f1e7; border: 1px solid rgba(192,201,195,.4); border-radius: 12px; padding: 9px; }
+  .frame-soft img, .frame-soft .ph { width: 100%; aspect-ratio: 460 / 384; object-fit: cover; border-radius: 6px; background: #cfe2d3; }
+  .values { display: flex; flex-direction: column; gap: 24px; }
+  .card-tint { background: var(--cream); border: 1px solid rgba(192,201,195,.2); border-radius: 8px; padding: 25px; display: flex; gap: 16px; align-items: flex-start; }
+  .card-tint .mi { font-size: 22px; color: var(--forest); line-height: 1; margin-top: 2px; }
+  .card-tint h3 { font-size: 18px; letter-spacing: -.09px; line-height: 26px; margin-bottom: 4px; }
+  .card-tint p { font-size: 16px; line-height: 26px; }
+  .chip-label { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: .6px; color: var(--muted); text-transform: uppercase; margin-bottom: 12px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; padding: 7px 17px; border-radius: 999px; background: rgba(159,240,202,.4); border: 1px solid rgba(17,107,77,.2); font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 12px; color: var(--mint-ink); }
+  .quote { margin-top: 48px; background: var(--cream); border: 1px solid var(--line); border-left: 4px solid var(--forest-2); border-radius: 12px; padding: 33px 33px 33px 36px; display: flex; gap: 24px; }
+  .quote .qmark { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 48px; color: #9aaca2; line-height: 1; }
+  .quote blockquote { font-style: italic; color: var(--ink); font-size: 18px; line-height: 29px; letter-spacing: -.18px; }
+  .quote-by { display: flex; align-items: center; gap: 12px; margin-top: 16px; }
+  .avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--forest-2); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 14px; flex-shrink: 0; }
+  .quote-by strong { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; color: var(--forest); display: block; line-height: 26px; }
+  .quote-by span { font-size: 14px; color: var(--body); }
+
+  /* ---------- Initiatives ---------- */
+  .sec-cream { background: var(--cream); }
+  .cards-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,.05); overflow: hidden; display: flex; flex-direction: column; }
+  .card .media { position: relative; height: 192px; background: #cfe2d3; }
+  .card .media img { width: 100%; height: 100%; object-fit: cover; }
+  .card .tag { position: absolute; left: 12px; top: 12px; background: rgba(255,255,255,.9); backdrop-filter: blur(4px); padding: 4px 10px; border-radius: 6px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 12px; color: var(--forest); }
+  .card .body { padding: 24px; display: flex; flex-direction: column; gap: 22px; flex: 1; }
+  .card h3 { font-size: 18px; letter-spacing: -.09px; line-height: 26px; }
+  .card p { font-size: 14px; line-height: 22px; }
+  .card .more { margin-top: auto; padding-top: 16px; }
+
+  /* ---------- Impact (dark) ---------- */
+  .sec-impact { background: var(--forest-2); border-bottom: 1px solid var(--forest); }
+  .sec-impact .eyebrow { color: var(--mint-2); }
+  .sec-impact .h2 { color: #fff; }
+  .sec-impact .head p { color: var(--sage); font-size: 16px; line-height: 26px; }
+  .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+  .metric { background: rgba(0,53,39,.4); border: 1px solid rgba(135,187,167,.2); border-radius: 12px; padding: 33px; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; backdrop-filter: blur(4px); }
+  .metric .mi { width: 48px; height: 48px; border-radius: 50%; background: rgba(162,243,204,.2); display: grid; place-items: center; color: var(--mint-2); font-size: 20px; }
+  .metric .num { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 48px; letter-spacing: -1.2px; line-height: 52px; color: var(--mint-2); padding-top: 4px; }
+  .metric .lbl { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 18px; color: #fff; line-height: 26px; }
+  .metric .sub { font-size: 14px; line-height: 22px; color: var(--sage); }
+  .sec-impact .footnote { text-align: center; font-style: italic; font-size: 14px; color: var(--sage); margin-top: 32px; }
+
+  /* ---------- Stories ---------- */
+  .stories { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .story { background: var(--cream); border: 1px solid rgba(192,201,195,.3); border-radius: 8px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; }
+  .story-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+  .story-top .pill-s { background: rgba(159,240,202,.6); color: var(--mint-ink); font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 12px; padding: 4px 12px; border-radius: 999px; letter-spacing: .4px; }
+  .story-top .meta { font-size: 14px; color: var(--muted); }
+  .story h3 { font-size: 18px; letter-spacing: -.09px; line-height: 26px; margin-bottom: 16px; }
+  .story p { font-size: 16px; line-height: 26px; }
+  .story-by { border-top: 1px solid rgba(192,201,195,.3); padding-top: 25px; display: flex; gap: 12px; align-items: center; }
+  .story-by .avatar { width: 36px; height: 36px; font-size: 12px; }
+  .story-by strong { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; color: var(--forest); display: block; }
+  .story-by span { font-size: 14px; color: var(--muted); }
+  .notice { margin-top: 32px; background: var(--cream-2); border: 1px solid rgba(192,201,195,.4); border-radius: 8px; padding: 17px; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 14px; }
+  .notice strong { color: var(--body); }
+  .notice .link { font-size: 14px; color: var(--forest); }
+
+  /* ---------- CSR (dark) ---------- */
+  .sec-csr { background: var(--forest); border-bottom: 1px solid var(--forest-2); padding: 96px 0; }
+  .csr-top { display: grid; grid-template-columns: 8fr 4fr; gap: 48px; align-items: start; }
+  .csr-top .pill { background: rgba(162,243,204,.2); border-color: rgba(162,243,204,.3); color: var(--mint-2); }
+  .csr-top h2 { font-weight: 700; font-size: 40px; letter-spacing: -1px; line-height: 48px; color: #fff; margin: 16px 0; }
+  .csr-top p { font-size: 18px; line-height: 29px; letter-spacing: -.18px; color: var(--sage); }
+  .panel { background: rgba(23,76,60,.8); border: 1px solid rgba(135,187,167,.3); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; gap: 16px; }
+  .panel h3 { color: #fff; font-size: 18px; letter-spacing: -.09px; }
+  .panel p { font-size: 14px; line-height: 22px; color: var(--sage); }
+  .panel .stack { display: flex; flex-direction: column; gap: 12px; padding-top: 8px; }
+  .panel .btn { width: 100%; }
+  .panel .reg { border-top: 1px solid rgba(135,187,167,.2); padding-top: 13px; text-align: center; font-size: 12px; color: var(--sage); }
+  .panel .reg b { font-family: 'Liberation Mono', monospace; color: var(--mint-2); font-weight: 700; }
+  .csr-opps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 64px; }
+  .opp { background: rgba(23,76,60,.5); border: 1px solid rgba(135,187,167,.2); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; gap: 12px; }
+  .opp .num { width: 40px; height: 40px; border-radius: 8px; background: rgba(162,243,204,.2); color: var(--mint-2); display: grid; place-items: center; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 16px; }
+  .opp h4 { color: #fff; font-size: 18px; letter-spacing: -.09px; line-height: 26px; }
+  .opp p { font-size: 14px; line-height: 22px; color: var(--sage); }
+
+  /* ---------- Transparency ---------- */
+  .sec-transp { background: var(--cream); }
+  .docs { background: #fff; border: 1px solid rgba(192,201,195,.4); border-radius: 12px; box-shadow: 0 1px 2px rgba(0,0,0,.05); overflow: hidden; margin-top: 32px; }
+  .doc-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px; border-top: 1px solid rgba(192,201,195,.3); }
+  .doc-row:first-child { border-top: 0; }
+  .doc-left { display: flex; gap: 16px; align-items: center; min-width: 0; }
+  .doc-left .di { font-size: 20px; color: var(--forest); width: 24px; text-align: center; }
+  .doc-left h4 { font-size: 18px; letter-spacing: -.09px; line-height: 26px; }
+  .doc-left p { font-size: 14px; line-height: 22px; color: var(--muted); }
+  .doc-right { display: flex; gap: 16px; align-items: center; flex-shrink: 0; }
+  .verified { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 12px; color: var(--forest-3); display: inline-flex; gap: 4px; align-items: center; }
+  .transp-foot { text-align: center; margin-top: 24px; }
+
+  /* ---------- Projects ---------- */
+  .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .project { background: var(--cream); border: 1px solid var(--line); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; }
+  .project-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+  .project .pill-s { background: var(--mint); color: var(--mint-ink); font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 12px; padding: 4px 12px; border-radius: 999px; letter-spacing: .4px; }
+  .project .loc { font-size: 14px; color: var(--muted); }
+  .project h3 { font-size: 22px; letter-spacing: -.22px; line-height: 30px; margin-bottom: 12px; }
+  .project p { font-size: 16px; line-height: 26px; }
+  .progress-head { display: flex; justify-content: space-between; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 12px; color: var(--body); letter-spacing: .4px; margin-bottom: 8px; }
+  .progress-head b { font-weight: 800; color: var(--forest); }
+  .progress { height: 10px; background: #e1ebe1; border-radius: 999px; overflow: hidden; }
+  .progress > span { display: block; height: 100%; background: var(--forest-3); border-radius: 999px; }
+  .project .actions { display: flex; gap: 12px; padding-top: 8px; margin-top: 24px; }
+  .project .actions .btn { flex: 1; padding: 10px 20px; }
+  .project .actions .btn-outline { flex: 0 0 auto; padding: 11px 17px; }
+
+  /* ---------- Partners ---------- */
+  .sec-partners { background: var(--cream); padding: 64px 0; }
+  .partners { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; margin-top: 32px; }
+  .partner { background: #fff; border: 1px solid var(--line); border-radius: 8px; height: 96px; padding: 25px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 500; font-size: 12px; letter-spacing: .4px; color: var(--body); text-align: center; }
+  .partner .pi { font-size: 22px; color: #5b6a62; }
+  .partners-foot { text-align: center; margin-top: 24px; }
+
+  /* ---------- Volunteer ---------- */
+  .vol { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .vol .pill { margin-bottom: 4px; }
+  .vol h2 { margin: 24px 0; }
+  .vol > div:first-child > p { font-size: 18px; line-height: 30px; letter-spacing: -.18px; }
+  .vol-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+  .vol-card { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 17px; display: flex; gap: 12px; align-items: flex-start; min-height: 104px; }
+  .vol-card .vi { font-size: 20px; color: var(--forest); line-height: 1.2; }
+  .vol-card h4 { font-size: 18px; letter-spacing: -.09px; line-height: 26px; }
+  .vol-card p { font-size: 14px; line-height: 22px; color: var(--muted); }
+  .vol .btn { margin-top: 16px; }
+  .vol-photo { border: 4px solid #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 8px 10px -6px rgba(0,0,0,.1); background: #cfe2d3; aspect-ratio: 576 / 440; }
+  .vol-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* ---------- Gallery ---------- */
+  .gallery-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 48px; }
+  .gallery-head .eyebrow { margin-bottom: 16px; }
+  .filters { display: flex; gap: 8px; flex-wrap: wrap; }
+  .filter { border: 0; border-radius: 999px; padding: 6px 16px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: .4px; background: var(--cream-2); color: var(--body); cursor: pointer; }
+  .filter.active { background: var(--forest); color: #fff; }
+  .bento { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 240px; gap: 16px; }
+  .tile { position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: #cfe2d3; box-shadow: 0 1px 2px rgba(0,0,0,.05); }
+  .tile img { width: 100%; height: 100%; object-fit: cover; }
+  .tile::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,53,39,.85), rgba(0,53,39,0) 60%); }
+  .tile .cap { position: absolute; left: 16px; right: 16px; bottom: 16px; z-index: 2; color: #fff; }
+  .tile .cap small { display: block; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 12px; color: var(--mint-2); letter-spacing: .4px; margin-bottom: 4px; }
+  .tile .cap h3 { color: #fff; font-size: 16px; line-height: 24px; }
+  .tile .cap p { color: var(--sage); font-size: 14px; line-height: 22px; margin-top: 4px; }
+  .t-wide { grid-column: span 2; }
+  .t-tall { grid-column: span 2; grid-row: span 2; }
+  .t-wide-bottom { grid-column: span 2; }
+
+  /* ---------- News ---------- */
+  .news-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 48px; }
+  .news-head .eyebrow { margin-bottom: 16px; }
+  .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .news { background: #fff; border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 1px 2px rgba(0,0,0,.05); display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; }
+  .news-body { padding: 24px; display: flex; flex-direction: column; gap: 12px; }
+  .news-meta { display: flex; justify-content: space-between; align-items: center; }
+  .news-meta .date { font-size: 14px; color: var(--muted); }
+  .news-meta .tagp { background: rgba(159,240,202,.5); color: var(--mint-ink); font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 12px; padding: 2px 10px; border-radius: 999px; }
+  .news h3 { font-size: 18px; letter-spacing: -.09px; line-height: 26px; }
+  .news p { font-size: 14px; line-height: 22px; }
+  .news-foot { padding: 8px 24px 24px; }
+
+  /* ---------- Contact ---------- */
+  .contact { display: grid; grid-template-columns: 5fr 7fr; gap: 48px; align-items: start; }
+  .info { background: var(--cream); border: 1px solid var(--line); border-radius: 12px; padding: 33px; display: flex; flex-direction: column; gap: 24px; }
+  .info > h3 { font-size: 18px; letter-spacing: -.09px; border-bottom: 1px solid var(--line); padding-bottom: 17px; }
+  .info-row { display: flex; gap: 16px; align-items: flex-start; }
+  .info-row .ii { width: 20px; color: var(--forest); font-size: 18px; line-height: 22px; flex-shrink: 0; text-align: center; }
+  .info-row h4 { font-size: 14px; letter-spacing: .14px; color: var(--forest); line-height: 20px; }
+  .info-row p, .info-row a { font-size: 14px; line-height: 22px; color: var(--body); }
+  .info-row a { color: var(--forest); }
+  .map { background: var(--cream-2); border: 1px solid rgba(192,201,195,.4); border-radius: 8px; padding: 17px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .map h4 { font-size: 14px; color: var(--forest); }
+  .map small { font-size: 12px; color: var(--muted); }
+  .map .btn { padding: 6px 12px; font-size: 12px; background: #fff; color: var(--forest); border-radius: 6px; font-weight: 700; }
+
+  .form-card { background: var(--cream); border: 1px solid var(--line); border-radius: 12px; padding: 33px; display: flex; flex-direction: column; gap: 24px; }
+  .tabs { display: flex; border-bottom: 1px solid var(--line); }
+  .tab { background: none; border: 0; border-bottom: 2px solid transparent; padding: 0 16px 14px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 14px; color: var(--body); cursor: pointer; margin-bottom: -1px; }
+  .tab.active { color: var(--forest); border-bottom-color: var(--forest); }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .field { display: flex; flex-direction: column; gap: 4px; }
+  .field.full { grid-column: 1 / -1; }
+  .field label { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: .4px; color: var(--ink); }
+  .field input { background: #fff; border: 1px solid rgba(192,201,195,.5); border-radius: 8px; padding: 14px 17px; font-size: 16px; color: var(--ink); outline: none; transition: border-color .2s, box-shadow .2s; }
+  .field input::placeholder { color: #6b7280; }
+  .field input:focus { border-color: var(--forest-3); box-shadow: 0 0 0 3px rgba(17,107,77,.15); }
+  .field input:invalid:not(:placeholder-shown) { border-color: #c0392b; }
+  .form-card form { display: flex; flex-direction: column; gap: 16px; }
+  .form-card .btn { align-self: flex-start; }
+  .form-status { font-size: 14px; min-height: 20px; }
+  .form-status.ok { color: var(--forest-3); font-weight: 600; }
+  .form-status.err { color: #b3261e; font-weight: 600; }
+
+  /* ---------- Donation ---------- */
+  .sec-donate { background: var(--cream-2); padding: 64px 192px 65px; border-bottom: 1px solid rgba(192,201,195,.2); }
+  .donate-wrap { max-width: 896px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center; }
+  .donate-wrap .pill { background: var(--mint); }
+  .donate-wrap h2 { font-weight: 700; font-size: 28px; letter-spacing: -.42px; line-height: 36px; }
+  .donate-wrap > p { max-width: 672px; font-size: 16px; line-height: 26px; }
+  .bank { background: #fff; border: 1px solid rgba(192,201,195,.4); border-radius: 12px; padding: 25px; max-width: 512px; width: 100%; text-align: left; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 1px 1px rgba(0,0,0,.05); }
+  .bank h4 { font-size: 14px; letter-spacing: .14px; border-bottom: 1px solid var(--line); padding-bottom: 9px; }
+  .bank p { font-size: 14px; line-height: 22px; color: var(--ink); }
+  .bank p b { font-family: 'Inter', sans-serif; font-weight: 700; }
+  .bank small { font-style: italic; font-size: 12px; color: var(--muted); }
+
+  /* ---------- Footer ---------- */
+  .site-footer { background: var(--forest); color: var(--sage); border-top: 1px solid var(--forest-2); padding: 64px 0 0; }
+  .f-grid { display: grid; grid-template-columns: 4fr 2fr 3fr 3fr; gap: 32px; }
+  .f-brand { display: flex; flex-direction: column; gap: 15px; }
+  .f-brand .row { display: flex; gap: 12px; align-items: center; }
+  .f-brand .logo { width: 48px; height: 48px; }
+  .f-brand .name { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -.22px; color: #fff; line-height: 30px; }
+  .f-brand p { font-size: 14px; line-height: 22.75px; }
+  .f-brand .certs { font-weight: 500; font-size: 14px; line-height: 22px; color: rgba(162,243,204,.9); }
+  .f-col h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 18px; color: #fff; letter-spacing: -.09px; margin-bottom: 12px; }
+  .f-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+  .f-col a { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: .4px; color: var(--sage); }
+  .f-col a:hover { color: #fff; }
+  .f-col p { font-size: 14px; line-height: 22px; }
+  .f-col .phone b { font-weight: 700; }
+  .f-col .phone span { color: #fff; }
+  .f-col .mail { margin-top: 8px; color: var(--sage); }
+  .f-col .mail span { color: #fff; word-break: break-all; }
+  .f-donate { display: inline-flex; justify-content: center; width: 100%; background: #116b4d; color: #fff; padding: 12px 24px; border-radius: 999px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 14px; margin-top: 16px; }
+  .f-strip { margin-top: 48px; border-top: 1px solid var(--forest-2); padding: 33px 0 24px; display: flex; flex-wrap: wrap; gap: 8px 24px; }
+  .f-strip a { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: .4px; color: var(--sage); }
+  .f-strip a:hover { color: #fff; }
+  .f-bottom { border-top: 1px solid var(--forest-2); padding: 25px 0 32px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 14px; }
+  .f-bottom .made { font-size: 12px; color: rgba(162,243,204,.8); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1100px) {
+    .nav-links { gap: 18px; }
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+    .cards-4, .csr-opps { grid-template-columns: repeat(2, 1fr); }
+    .partners { grid-template-columns: repeat(3, 1fr); }
+    .f-grid { grid-template-columns: 1fr 1fr; }
+    .sec-donate { padding: 64px 32px; }
+  }
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .nav-toggle { display: block; }
+    .site-header.open .nav-links { display: flex; position: absolute; top: 80px; left: 0; right: 0; background: var(--cream); flex-direction: column; align-items: flex-start; padding: 16px 32px 24px; border-bottom: 1px solid var(--line); gap: 14px; }
+    .hero-grid, .about-grid, .csr-top, .vol, .contact { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 40px; line-height: 48px; letter-spacing: -1px; }
+    .h2 { font-size: 32px; line-height: 40px; }
+    .stories, .news-grid, .projects { grid-template-columns: 1fr; }
+    .bento { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 220px; }
+    .t-tall { grid-row: span 1; }
+    .t-wide, .t-tall, .t-wide-bottom { grid-column: span 2; }
+    .partners { grid-template-columns: repeat(2, 1fr); }
+    .doc-row { flex-direction: column; align-items: flex-start; }
+    .nav-actions .btn-ghost { display: none; }
+  }
+  @media (max-width: 600px) {
+    .wrap { padding: 0 20px; }
+    .section, .sec-csr { padding: 56px 0; }
+    .brand-tag { display: none; }
+    .brand-name { font-size: 14px; white-space: normal; }
+    .logo { width: 40px; height: 40px; }
+    .hero { padding: 56px 0; }
+    .hero h1 { font-size: 34px; line-height: 42px; }
+    .metrics, .cards-4, .csr-opps, .vol-grid, .form-grid, .f-grid { grid-template-columns: 1fr; }
+    .partners { grid-template-columns: repeat(2, 1fr); }
+    .bento { grid-template-columns: 1fr; grid-auto-rows: 240px; }
+    .t-wide, .t-tall, .t-wide-bottom { grid-column: span 1; }
+    .quote { flex-direction: column; gap: 12px; padding: 24px; }
+    .notice { flex-direction: column; align-items: flex-start; }
+    .sec-donate { padding: 56px 20px; }
+    .info, .form-card { padding: 24px; }
+    .nav-actions .btn-dark { display: none; }
+    .site-header .nav-toggle { margin-left: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <div class="logo"><img src="images/logo.png" alt="Puthu Ithayam Arakattallai logo" onerror="this.style.display='none'"></div>
+      <div>
+        <div class="brand-name">PUTHU ITHAYAM ARAKATTALLAI</div>
+        <div class="brand-tag">Compassion • Transparency • Upliftment</div>
+      </div>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about" class="active">About</a>
+      <a href="#initiatives">Initiatives</a>
+      <a href="#impact">Impact</a>
+      <a href="#csr">CSR Partnerships</a>
+      <a href="#transparency">Transparency</a>
+      <a href="#updates">Updates</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="#transparency" class="btn btn-ghost">✓ CSR Desk</a>
+      <a href="#donate" class="btn btn-dark">Donate Now</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill"><span class="dot"></span>A little support. A lifetime of change.</span>
+      <h1>Together, We Can Build a Better Tomorrow.</h1>
+      <p class="lead">Every person deserves the opportunity to live with dignity, access education, receive proper healthcare and build a better future. At Puthu Ithayam Arakattallai, we work to make these opportunities accessible to those who need them most.</p>
+      <div class="btn-row">
+        <a href="#donate" class="btn btn-dark">Support Our Mission</a>
+        <a href="#impact" class="btn btn-light">Explore Our Impact</a>
+      </div>
+      <p class="tagline">Every contribution can make a meaningful difference in someone's life.</p>
+      <div class="trust-strip">
+        <span>Registered Charitable Trust</span>
+        <span>12AB &amp; 80G Certified</span>
+        <span>CSR-1 Compliant</span>
+      </div>
+    </div>
+    <div class="photo-frame">
+      <img src="images/hero.jpg" alt="Community meeting at Puthu Ithayam Arakattallai">
+      <div class="impact-card">
+        <div class="ico-circle">🛡</div>
+        <div>
+          <h4>100% Direct Transparency</h4>
+          <p>Community-First Initiatives • Audited Allocation</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="about-intro">
+      <div class="eyebrow">Who We Are</div>
+      <h2 class="h2">A Trust Built on Compassion. A Mission Driven by Change.</h2>
+      <p>Puthu Ithayam Arakattallai is committed to supporting individuals and families facing financial and social challenges. Through meaningful initiatives in education, healthcare, livelihood development and hunger relief, we strive to create opportunities for people to improve their lives and build a sustainable future.</p>
+    </div>
+    <div class="about-grid">
+      <div class="frame-soft">
+        <img src="images/about.jpg" alt="Founder receiving a community welcome">
+      </div>
+      <div class="values">
+        <div class="card-tint">
+          <div class="mi">◎</div>
+          <div>
+            <h3>Our Mission</h3>
+            <p>To support underprivileged communities by providing essential resources, opportunities and assistance that improve their quality of life.</p>
+          </div>
+        </div>
+        <div class="card-tint">
+          <div class="mi">◉</div>
+          <div>
+            <h3>Our Vision</h3>
+            <p>A society where every individual has access to education, healthcare, nutritious food and opportunities to live independently with dignity.</p>
+          </div>
+        </div>
+        <div>
+          <div class="chip-label">Our Core Principles</div>
+          <div class="chips">
+            <span class="chip">♡ Compassion</span>
+            <span class="chip">✓ Integrity</span>
+            <span class="chip">⚖ Equality</span>
+            <span class="chip">◈ Commitment</span>
+            <span class="chip">▤ Transparency</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="quote">
+      <div class="qmark">99</div>
+      <div>
+        <blockquote>"I believe that helping someone is not just about giving them what they need today. It is about giving them the confidence and opportunity to build a better tomorrow. Every small act of kindness can create a lasting difference. Through Puthu Ithayam Arakattallai, we hope to bring people together and make that difference possible."</blockquote>
+        <div class="quote-by">
+          <div class="avatar">PT</div>
+          <div>
+            <strong>Managing Trustee</strong>
+            <span>Puthu Ithayam Arakattallai (Managing Board)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INITIATIVES ============ -->
+<section class="section sec-cream" id="initiatives">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">What We Do</div>
+      <h2 class="h2">Creating Opportunities. Changing Lives.</h2>
+      <p class="lead">Our initiatives focus on the essential needs that help individuals and families move towards a better future with confidence and sustainable empowerment.</p>
+    </div>
+    <div class="cards-4">
+      <article class="card">
+        <div class="media"><img src="images/init-education.jpg" alt="Education support"><span class="tag">🎓 Education</span></div>
+        <div class="body">
+          <h3>Education Support</h3>
+          <p>Enabling children with school supplies, scholarships, learning resources, and tuition support to eliminate classroom dropouts.</p>
+          <a href="#projects" class="link more">Learn More →</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="media"><img src="images/init-healthcare.jpg" alt="Healthcare camp"><span class="tag">⛨ Healthcare</span></div>
+        <div class="body">
+          <h3>Healthcare &amp; Medical Aid</h3>
+          <p>Conducting preventive health camps, providing emergency medical funds, vital diagnostic screenings, and essential medicines.</p>
+          <a href="#projects" class="link more">Learn More →</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="media"><img src="images/init-livelihood.jpg" alt="Livelihood development"><span class="tag">▣ Livelihood</span></div>
+        <div class="body">
+          <h3>Livelihood Development</h3>
+          <p>Equipping women and youth with technical vocational skills, tailoring kits, and micro-enterprise mentoring to foster self-sufficiency.</p>
+          <a href="#projects" class="link more">Learn More →</a>
+        </div>
+      </article>
+      <article class="card">
+        <div class="media"><img src="images/init-nutrition.jpg" alt="Food and hunger relief"><span class="tag">🍴 Nutrition</span></div>
+        <div class="body">
+          <h3>Food &amp; Hunger Relief</h3>
+          <p>Organizing structured grocery kit distribution and daily hot meal drives to ensure no marginalized elder or child suffers starvation.</p>
+          <a href="#projects" class="link more">Learn More →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IMPACT ============ -->
+<section class="section sec-impact" id="impact">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Our Difference</div>
+      <h2 class="h2">Small Contributions. Meaningful Impact.</h2>
+      <p>Behind every number is a person, a family and a story of hope. Our efforts are focused on creating meaningful improvements in the communities we serve.</p>
+    </div>
+    <div class="metrics">
+      <div class="metric"><div class="mi">👥</div><div class="num">100+</div><div class="lbl">Lives Supported</div><div class="sub">Holistic community interventions</div></div>
+      <div class="metric"><div class="mi">🎓</div><div class="num">50+</div><div class="lbl">Students Supported</div><div class="sub">Scholarships &amp; essential kits</div></div>
+      <div class="metric"><div class="mi">🩺</div><div class="num">1000+</div><div class="lbl">Medical Initiatives</div><div class="sub">Rural clinics &amp; emergency support</div></div>
+      <div class="metric"><div class="mi">🤲</div><div class="num">1000+</div><div class="lbl">Meals Distributed</div><div class="sub">Targeted hunger relief provisions</div></div>
+    </div>
+    <p class="footnote">* Stat counts updated on quarterly statutory audits under trustee supervision.</p>
+  </div>
+</section>
+
+<!-- ============ STORIES ============ -->
+<section class="section" id="stories">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Real People. Real Change.</div>
+      <h2 class="h2">Every Life Has a Story Worth Sharing.</h2>
+      <p class="lead">Behind every initiative is an individual whose journey towards resilience and self-reliance begins with timely, compassionate community intervention.</p>
+    </div>
+    <div class="stories">
+      <article class="story">
+        <div>
+          <div class="story-top"><span class="pill-s">Education Case</span><span class="meta">Verified Study</span></div>
+          <h3>An Opportunity to Continue Learning</h3>
+          <p>When financial hardship threatened to end an aspiring high school student's studies after the loss of the family's sole earner, Puthu Ithayam Arakattallai stepped in with tuition grants, textbooks, and mentoring, enabling the student to successfully complete board examinations with distinction.</p>
+        </div>
+        <div class="story-by"><div class="avatar">S1</div><div><strong>Rural Student Scholar</strong><span>Thoothukudi District</span></div></div>
+      </article>
+      <article class="story">
+        <div>
+          <div class="story-top"><span class="pill-s">Healthcare Aid</span><span class="meta">Verified Study</span></div>
+          <h3>Support When It Mattered Most</h3>
+          <p>An elderly daily-wage laborer confronted severe cardiac complications without the resources for emergency clinical medications. Through our medical distress fund, diagnostic consultations and ongoing post-operative drug therapies were secured without delay, restoring health and domestic stability.</p>
+        </div>
+        <div class="story-by"><div class="avatar">S2</div><div><strong>Medical Beneficiary</strong><span>Udangudi Region</span></div></div>
+      </article>
+      <article class="story">
+        <div>
+          <div class="story-top"><span class="pill-s">Livelihood</span><span class="meta">Verified Study</span></div>
+          <h3>A New Beginning Through Skills</h3>
+          <p>After completing our 90-day tailoring and garment-making workshop, a mother of two received an industrial sewing apparatus. Today, she independently manages custom tailoring orders from neighborhood households, securing consistent monthly livelihood and dignity for her household.</p>
+        </div>
+        <div class="story-by"><div class="avatar">S3</div><div><strong>Micro-Entrepreneur</strong><span>Tamil Nadu Community</span></div></div>
+      </article>
+    </div>
+    <div class="notice">
+      <div><strong>🛡 Notice:</strong> Beneficiary privacy and dignity are guarded with utmost care. Full documented case consent available upon verified request.</div>
+      <a href="#transparency" class="link">Request Documentation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CSR ============ -->
+<section class="sec-csr" id="csr">
+  <div class="wrap">
+    <div class="csr-top">
+      <div>
+        <span class="pill">◫ Partner With Purpose</span>
+        <h2>Let's Create a Greater Impact, Together.</h2>
+        <p>We collaborate closely with visionary enterprise corporate social responsibility (CSR) departments, private foundations, and institutional funders. Under statutory provisions of Schedule VII of the Indian Companies Act, 2013 and our valid CSR-1 certification, our trust provides audited, outcome-tracked community development projects with clear governance.</p>
+      </div>
+      <aside class="panel">
+        <h3>Corporate Action Desk</h3>
+        <p>Connect directly with our Trust Governance Board for custom project MOUs and field visits.</p>
+        <div class="stack">
+          <a href="#donate" class="btn btn-mint">◆ Become a CSR Partner</a>
+          <a href="#transparency" class="btn btn-outline" style="color:#fff;border-color:rgba(135,187,167,.4);">⤓ Download CSR Deck &amp; Profile</a>
+        </div>
+        <div class="reg">MCA CSR-1 Reg: <b>[Verified Registry]</b> • 80G Eligible</div>
+      </aside>
+    </div>
+    <div class="csr-opps">
+      <div class="opp"><div class="num">01</div><h4>CSR Project Funding</h4><p>Support educational, healthcare and community development initiatives through programmatic financial contributions.</p></div>
+      <div class="opp"><div class="num">02</div><h4>Project Sponsorship</h4><p>Sponsor specific target projects like rural school labs or mobile medical screening camps with complete brand attribution.</p></div>
+      <div class="opp"><div class="num">03</div><h4>Employee Volunteering</h4><p>Encourage your workforce to engage in meaningful on-ground community service activities, meal distribution, and youth tutoring.</p></div>
+      <div class="opp"><div class="num">04</div><h4>Long-Term Partnerships</h4><p>Build sustainable multi-year collaborations that align with corporate ESG goals and deliver measurable social impact.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="section" id="gallery">
+  <div class="wrap">
+    <div class="gallery-head">
+      <div>
+        <div class="eyebrow">Moments That Matter</div>
+        <h2 class="h2" style="margin-top:16px;">A Glimpse Into the Work We Do.</h2>
+      </div>
+      <div class="filters" id="filters">
+        <button class="filter active">All Activities</button>
+        <button class="filter">Education</button>
+        <button class="filter">Healthcare</button>
+        <button class="filter">Food Relief</button>
+        <button class="filter">Livelihood</button>
+      </div>
+    </div>
+    <div class="bento">
+      <div class="tile t-tall">
+        <img src="images/gallery-1.jpg" alt="Doorstep nutrition and meal delivery">
+        <div class="cap"><small>DAILY FOOD RELIEF</small><h3>Doorstep Nutrition &amp; Meal Delivery</h3><p>Providing cooked food and daily nutritional provisions directly to rural elderly and families via dedicated electric vehicle.</p></div>
+      </div>
+      <div class="tile">
+        <img src="images/gallery-2.jpg" alt="Community kitchen">
+        <div class="cap"><small>MEAL PREPARATION</small><h3>Community Kitchen Hub</h3></div>
+      </div>
+      <div class="tile">
+        <img src="images/gallery-3.jpg" alt="Home care">
+        <div class="cap"><small>ELDER CARE</small><h3>Home Care &amp; Ration Kits</h3></div>
+      </div>
+      <div class="tile">
+        <img src="images/gallery-4.jpg" alt="Clothing drive">
+        <div class="cap"><small>CLOTHING DRIVE</small><h3>Textile &amp; Garment Aid</h3></div>
+      </div>
+      <div class="tile">
+        <img src="images/gallery-5.jpg" alt="Senior citizen aid">
+        <div class="cap"><small>DIRECT WELFARE</small><h3>Senior Citizen Aid</h3></div>
+      </div>
+      <div class="tile t-wide">
+        <img src="images/gallery-6.jpg" alt="Field outreach">
+        <div class="cap"><small>FIELD OUTREACH</small><h3>Remote Hamlet Electric Outreach</h3><p>Partner vehicle ensuring food sustenance reaches vulnerable senior women in hard-to-reach rural hamlets.</p></div>
+      </div>
+      <div class="tile">
+        <img src="images/gallery-7.jpg" alt="Mobile meal distribution">
+        <div class="cap"><small>VILLAGE DRIVE</small><h3>Mobile Meal Distribution</h3></div>
+      </div>
+      <div class="tile">
+        <img src="images/gallery-8.jpg" alt="Scholarship handover">
+        <div class="cap"><small>EDUCATION GRANT</small><h3>Scholarship Handover</h3></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRANSPARENCY ============ -->
+<section class="section sec-transp" id="transparency">
+  <div class="wrap">
+    <div class="head" style="margin-bottom:0;align-items:flex-start;text-align:left;">
+      <div class="eyebrow">Our Commitment</div>
+      <h2 class="h2">Trust Is Built Through Transparency.</h2>
+      <p class="lead">We believe that every contribution comes with a sacred responsibility. Maintaining statutory transparency and fiduciary accountability is the cornerstone of our trust's governance.</p>
+    </div>
+    <div class="docs">
+      <div class="doc-row">
+        <div class="doc-left"><div class="di">🗎</div><div><h4>Trust Registration Certificate</h4><p>Indian Trusts Act, 1882 • Regulated &amp; Notarized</p></div></div>
+        <div class="doc-right"><span class="verified">✓ Verified Status</span><button class="btn btn-sm">⤓ Download PDF</button></div>
+      </div>
+      <div class="doc-row">
+        <div class="doc-left"><div class="di">✔</div><div><h4>12AB Registration Certificate</h4><p>Income Tax Department, Government of India</p></div></div>
+        <div class="doc-right"><span class="verified">✓ Active &amp; Valid</span><button class="btn btn-sm">⤓ Download PDF</button></div>
+      </div>
+      <div class="doc-row">
+        <div class="doc-left"><div class="di">▤</div><div><h4>80G Tax Exemption Certificate</h4><p>50% Income Tax Relief for Indian Donors</p></div></div>
+        <div class="doc-right"><span class="verified">✓ Valid Nationwide</span><button class="btn btn-sm">⤓ Download PDF</button></div>
+      </div>
+      <div class="doc-row">
+        <div class="doc-left"><div class="di">▥</div><div><h4>CSR-1 Registration</h4><p>Ministry of Corporate Affairs (MCA), Government of India</p></div></div>
+        <div class="doc-right"><span class="verified">✓ Registered MCA</span><button class="btn btn-sm">⤓ Download PDF</button></div>
+      </div>
+      <div class="doc-row">
+        <div class="doc-left"><div class="di">▦</div><div><h4>Annual Activity &amp; Impact Reports</h4><p>Comprehensive programmatic disclosures &amp; beneficiary lists</p></div></div>
+        <div class="doc-right"><span class="verified">✓ Audited 2023-24</span><button class="btn btn-sm">⤓ Download PDF</button></div>
+      </div>
+      <div class="doc-row">
+        <div class="doc-left"><div class="di">▣</div><div><h4>Audited Financial Statements</h4><p>Chartered Accountant Certified Balance Sheets &amp; Income/Expenditure</p></div></div>
+        <div class="doc-right"><span class="verified">✓ CA Certified</span><button class="btn btn-sm">⤓ Download PDF</button></div>
+      </div>
+      <div class="doc-row">
+        <div class="doc-left"><div class="di">◔</div><div><h4>Fund Utilization &amp; Allocation Reports</h4><p>Quarterly statutory reconciliation of programmatic spending</p></div></div>
+        <div class="doc-right"><span class="verified">✓ Published Quarterly</span><button class="btn btn-sm">⤓ Download PDF</button></div>
+      </div>
+    </div>
+    <div class="transp-foot"><a href="#transparency" class="link">View Complete Compliance Archive &amp; Statutory Disclosures →</a></div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="section" id="projects">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Where Your Support Goes</div>
+      <h2 class="h2">Be Part of Something That Matters.</h2>
+      <p class="lead">Transparent, community-driven projects with verifiable allocation metrics across Tamil Nadu.</p>
+    </div>
+    <div class="projects">
+      <article class="project">
+        <div>
+          <div class="project-top"><span class="pill-s">Education</span><span class="loc">📍 Thoothukudi, Tamil Nadu</span></div>
+          <h3>Supporting Education for Every Child</h3>
+          <p>Provisioning rural school kits, science apparatus, and scholarship stipends to ensure zero dropout rates across vulnerable primary school cohorts.</p>
+        </div>
+        <div>
+          <div class="progress-head"><span>Raised: <b>₹XX,XX,XXX</b></span><span>Target: ₹XX,XX,XXX</span></div>
+          <div class="progress"><span style="width:68%"></span></div>
+          <div class="actions"><button class="btn btn-dark">Support This Project</button><button class="btn btn-outline">View Details</button></div>
+        </div>
+      </article>
+      <article class="project">
+        <div>
+          <div class="project-top"><span class="pill-s">Healthcare</span><span class="loc">📍 Udangudi &amp; Coastal Blocks</span></div>
+          <h3>Medical Assistance for Rural Families</h3>
+          <p>Mobile diagnostic screening vehicles, diabetic care medicines, and immediate subsidization of surgical care for marginalized rural elders.</p>
+        </div>
+        <div>
+          <div class="progress-head"><span>Raised: <b>₹XX,XX,XXX</b></span><span>Target: ₹XX,XX,XXX</span></div>
+          <div class="progress"><span style="width:52%"></span></div>
+          <div class="actions"><button class="btn btn-dark">Support This Project</button><button class="btn btn-outline">View Details</button></div>
+        </div>
+      </article>
+      <article class="project">
+        <div>
+          <div class="project-top"><span class="pill-s">Livelihood</span><span class="loc">📍 Regional Women Cohorts</span></div>
+          <h3>Skills for a Sustainable Livelihood</h3>
+          <p>Establishing community stitching training centres and micro-entrepreneurship handholding to foster steady independent family revenues.</p>
+        </div>
+        <div>
+          <div class="progress-head"><span>Raised: <b>₹XX,XX,XXX</b></span><span>Target: ₹XX,XX,XXX</span></div>
+          <div class="progress"><span style="width:79%"></span></div>
+          <div class="actions"><button class="btn btn-dark">Support This Project</button><button class="btn btn-outline">View Details</button></div>
+        </div>
+      </article>
+      <article class="project">
+        <div>
+          <div class="project-top"><span class="pill-s">Food Relief</span><span class="loc">📍 Santhaiyadiyoor &amp; Surrounds</span></div>
+          <h3>Food Support for Needy Communities</h3>
+          <p>Weekly dry ration kit provisions (grains, pulses, oils) delivered to destitute elderly widows, abandoned seniors, and disabled citizens.</p>
+        </div>
+        <div>
+          <div class="progress-head"><span>Raised: <b>₹XX,XX,XXX</b></span><span>Target: ₹XX,XX,XXX</span></div>
+          <div class="progress"><span style="width:44%"></span></div>
+          <div class="actions"><button class="btn btn-dark">Support This Project</button><button class="btn btn-outline">View Details</button></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARTNERS ============ -->
+<section class="sec-partners" id="partners">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Growing Together</div>
+      <h2 class="h2" style="font-size:28px;line-height:36px;letter-spacing:-.42px;">Stronger Communities Begin With Stronger Partnerships.</h2>
+      <p class="lead">We value the individuals, businesses, institutions and organizations that share our commitment to equitable human development.</p>
+    </div>
+    <div class="partners">
+      <div class="partner"><span class="pi">🏢</span>CSR Ally [01]</div>
+      <div class="partner"><span class="pi">🏬</span>Enterprise Fund</div>
+      <div class="partner"><span class="pi">🛡</span>Hospital Partner</div>
+      <div class="partner"><span class="pi">🎓</span>Education Trust</div>
+      <div class="partner"><span class="pi">🏛</span>Civic Society</div>
+      <div class="partner"><span class="pi">🤝</span>CSR Ally [02]</div>
+    </div>
+    <div class="partners-foot"><a href="#csr" class="link">Become a Supporting Institutional Partner →</a></div>
+  </div>
+</section>
+
+<!-- ============ VOLUNTEER ============ -->
+<section class="section sec-cream" id="volunteer">
+  <div class="wrap vol">
+    <div>
+      <span class="pill">♥ Be the Reason Someone Smiles</span>
+      <h2 class="h2">Your Time Can Make a Difference.</h2>
+      <p>You don't need to do something extraordinary to create change. Sometimes, a little time, a helping hand and a caring heart are enough to revive another person's faith in the world.</p>
+      <div class="vol-grid">
+        <div class="vol-card"><div class="vi">🎓</div><div><h4>Teaching &amp; Support</h4><p>Weekend tutoring &amp; child mentor sessions</p></div></div>
+        <div class="vol-card"><div class="vi">⛨</div><div><h4>Medical Camp Aid</h4><p>Registration desk &amp; camp management</p></div></div>
+        <div class="vol-card"><div class="vi">🤲</div><div><h4>Food Distribution</h4><p>Packing &amp; field ration kit delivery</p></div></div>
+        <div class="vol-card"><div class="vi">📢</div><div><h4>Community Outreach</h4><p>Beneficiary survey &amp; field coordination</p></div></div>
+      </div>
+      <a href="#donate" class="btn btn-dark">Join as a Volunteer</a>
+    </div>
+    <div class="vol-photo"><img src="images/volunteer.jpg" alt="Trust volunteers at a community event"></div>
+  </div>
+</section>
+
+<!-- ============ NEWS ============ -->
+<section class="section" id="updates">
+  <div class="wrap">
+    <div class="news-head">
+      <div>
+        <div class="eyebrow">Latest From Our Trust</div>
+        <h2 class="h2" style="margin-top:16px;">Stay Connected With Our Journey.</h2>
+      </div>
+      <a href="#updates" class="link">View All Updates &amp; Press Notes</a>
+    </div>
+    <div class="news-grid">
+      <article class="news">
+        <div class="news-body">
+          <div class="news-meta"><span class="date">November 2024</span><span class="tagp">Education</span></div>
+          <h3>Education Support Initiative for Rural Students Launched</h3>
+          <p>Over 150 primary students in Santhaiyadiyoor and surrounding hamlets were supplied with complete academic sets, uniform vouchers, and academic counseling kits for the upcoming term.</p>
+        </div>
+        <div class="news-foot"><a href="#updates" class="link">Read Full Report →</a></div>
+      </article>
+      <article class="news">
+        <div class="news-body">
+          <div class="news-meta"><span class="date">October 2024</span><span class="tagp">Healthcare</span></div>
+          <h3>Community Healthcare Awareness &amp; Screening Camp Concluded</h3>
+          <p>Partnering with regional clinical volunteers, a comprehensive two-day camp provided free cardiac screenings, blood sugar panels, and preventive gerontology consultations to 320+ residents.</p>
+        </div>
+        <div class="news-foot"><a href="#updates" class="link">Read Full Report →</a></div>
+      </article>
+      <article class="news">
+        <div class="news-body">
+          <div class="news-meta"><span class="date">September 2024</span><span class="tagp">Food Relief</span></div>
+          <h3>Monsoon Food Relief Drive Successfully Reaches Needy Families</h3>
+          <p>To mitigate seasonal daily-wage work shortages, our trust volunteers distributed month-long essential dry ration packages to vulnerable households across Udangudi block.</p>
+        </div>
+        <div class="news-foot"><a href="#updates" class="link">Read Full Report →</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT + FORM ============ -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Get in Touch</div>
+      <h2 class="h2">Let's Start a Conversation That Creates Change.</h2>
+      <p class="lead">Whether you are an individual patron, volunteer, or institutional CSR leader, our trust office welcomes your inquiry.</p>
+    </div>
+    <div class="contact">
+      <div class="info">
+        <h3>Registered Trust Office</h3>
+        <div class="info-row">
+          <div class="ii">📍</div>
+          <div>
+            <h4>Official Postal Address</h4>
+            <p>PUTHU ITHAYAM ARAKATTALLAI<br>64/4 Melur Street, Santhaiyadiyoor,<br>Udangudi, Thoothukudi District,<br>Tamil Nadu – 628203, India</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="ii">📞</div>
+          <div>
+            <h4>Trust Helpline &amp; WhatsApp</h4>
+            <p><a href="tel:+917200345730">+91 7200345730</a></p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="ii">✉</div>
+          <div>
+            <h4>Official Communications</h4>
+            <p><a href="mailto:puthuithayamarakattallai@gmail.com">puthuithayamarakattallai@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="ii">🕘</div>
+          <div>
+            <h4>Administrative Working Hours</h4>
+            <p>Monday to Saturday: 9:00 AM – 6:00 PM IST<br>(Sundays reserved for scheduled field distributions)</p>
+          </div>
+        </div>
+        <div class="map">
+          <div>
+            <h4>Udangudi Jurisdiction</h4>
+            <small>Thoothukudi District, Tamil Nadu</small>
+          </div>
+          <a class="btn" href="https://www.google.com/maps/search/Santhaiyadiyoor+Udangudi" target="_blank" rel="noopener">Open Map</a>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-tab="general" role="tab">General Enquiry</button>
+          <button class="tab" data-tab="csr" role="tab">Corporate CSR Enquiry</button>
+        </div>
+
+        <!-- General form -->
+        <form id="form-general" class="tab-pane" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="g-name">Your Full Name *</label>
+              <input id="g-name" name="name" type="text" placeholder="e.g. Ramesh Kumar" required>
+            </div>
+            <div class="field">
+              <label for="g-email">Email Address *</label>
+              <input id="g-email" name="email" type="email" placeholder="e.g. ramesh@example.com" required>
+            </div>
+            <div class="field full">
+              <label for="g-phone">Phone Number *</label>
+              <input id="g-phone" name="phone" type="tel" placeholder="+91 98765 43210" required>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-dark">Send Message</button>
+          <div class="form-status" aria-live="polite"></div>
+        </form>
+
+        <!-- CSR form -->
+        <form id="form-csr" class="tab-pane" novalidate hidden>
+          <div class="form-grid">
+            <div class="field">
+              <label for="c-name">Your Full Name *</label>
+              <input id="c-name" name="name" type="text" placeholder="e.g. Ramesh Kumar" required>
+            </div>
+            <div class="field">
+              <label for="c-email">Email Address *</label>
+              <input id="c-email" name="email" type="email" placeholder="e.g. ramesh@example.com" required>
+            </div>
+            <div class="field full">
+              <label for="c-phone">Phone Number *</label>
+              <input id="c-phone" name="phone" type="tel" placeholder="+91 98765 43210" required>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-dark">Send Message</button>
+          <div class="form-status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DONATION ============ -->
+<section class="sec-donate" id="donate">
+  <div class="donate-wrap">
+    <span class="pill">♡ Contribute With Confidence</span>
+    <h2>Every Rupee Directly Sustains a Real Life</h2>
+    <p>All financial contributions made to Puthu Ithayam Arakattallai qualify for 50% statutory tax deduction under Section 80G of the Indian Income Tax Act. Official 80G receipts issued promptly.</p>
+    <div class="bank">
+      <h4>Direct Bank Transfer Details (Trust Account)</h4>
+      <p><b>Account Name:</b> PUTHU ITHAYAM ARAKATTALLAI</p>
+      <p><b>Account Type:</b> Current Account (Charitable Trust)</p>
+      <p><b>Bank:</b> [Scheduled Commercial Bank, Udangudi Branch]</p>
+      <p><b>Account No:</b> [Available upon official donor request]</p>
+      <p><b>IFSC Code:</b> [Verified Bank Branch Code]</p>
+      <small>For instant UPI donation QR or bank confirmations, please call +91 7200345730.</small>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <div class="row">
+          <div class="logo"><img src="images/logo.png" alt="" onerror="this.style.display='none'"></div>
+          <div class="name">PUTHU ITHAYAM<br>ARAKATTALLAI</div>
+        </div>
+        <p>Building Hope. Creating Opportunities. Changing Lives. Dedicated to community empowerment, dignity, healthcare, and educational advancement across Tamil Nadu.</p>
+        <p class="certs">Registered Charitable Trust under Indian Trusts Act, 1882.<br>12AB, 80G &amp; CSR-1 Certified.</p>
+      </div>
+      <div class="f-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#initiatives">Our Initiatives</a></li>
+          <li><a href="#impact">Our Impact</a></li>
+          <li><a href="#projects">Our Projects</a></li>
+          <li><a href="#csr">CSR Partnerships</a></li>
+          <li><a href="#transparency">Transparency</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Our Initiatives</h4>
+        <ul>
+          <li><a href="#initiatives">Education Support</a></li>
+          <li><a href="#initiatives">Healthcare &amp; Medical Aid</a></li>
+          <li><a href="#initiatives">Livelihood Development</a></li>
+          <li><a href="#initiatives">Food &amp; Hunger Relief</a></li>
+        </ul>
+        <h4>Get Involved</h4>
+        <ul>
+          <li><a href="#donate">Donate Now</a></li>
+          <li><a href="#volunteer">Volunteer with Us</a></li>
+          <li><a href="#csr">Become a CSR Partner</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Trust Contact</h4>
+        <p>64/4 Melur Street, Santhaiyadiyoor, Udangudi, Thoothukudi District, Tamil Nadu – 628203</p>
+        <p class="phone" style="margin-top:8px;"><b>Phone:</b> <span>7200345730</span></p>
+        <p class="mail"><b>Email:</b> <span>puthuithayamarakattallai@gmail.com</span></p>
+        <a href="#donate" class="f-donate">Donate Now</a>
+      </div>
+    </div>
+    <div class="f-strip">
+      <a href="#transparency">Trust Deed &amp; 12AB</a>
+      <a href="#transparency">80G Tax Exemption</a>
+      <a href="#transparency">CSR-1 Registration</a>
+      <a href="#transparency">Annual Audited Reports</a>
+      <a href="#transparency">FCRA Compliance</a>
+      <a href="#transparency">Whistleblower Policy</a>
+      <a href="#transparency">Privacy Statement</a>
+      <a href="#transparency">Terms of Use</a>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 Puthu Ithayam Arakattallai. Registered Charitable Trust under Indian Trusts Act, 1882. 12AB, 80G &amp; CSR-1 Certified. All rights reserved.</span>
+      <span class="made">Made with love for a Better Tomorrow.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ---------- Config ---------- */
+  var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzpjr5EhfXHTPfCI0K8oObvdwK8hUV_8I1xqKBN8K3ZaqtS-GZ2EyJn3LBVeepo8Nqw/exec";
+
+  /* ---------- Mobile nav ---------- */
+  (function () {
+    var header = document.getElementById("siteHeader");
+    var toggle = document.getElementById("navToggle");
+    toggle.addEventListener("click", function () { header.classList.toggle("open"); });
+    document.querySelectorAll(".nav-links a").forEach(function (a) {
+      a.addEventListener("click", function () { header.classList.remove("open"); });
+    });
+  })();
+
+  /* ---------- Gallery filter (visual state only) ---------- */
+  document.querySelectorAll("#filters .filter").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll("#filters .filter").forEach(function (b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+    });
+  });
+
+  /* ---------- Tabs: General / CSR ---------- */
+  document.querySelectorAll(".tab").forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      document.querySelectorAll(".tab").forEach(function (t) { t.classList.remove("active"); });
+      tab.classList.add("active");
+      var target = tab.getAttribute("data-tab");
+      document.getElementById("form-general").hidden = target !== "general";
+      document.getElementById("form-csr").hidden = target !== "csr";
+    });
+  });
+
+  /* ---------- Form submission to Google Sheets (file:// safe) ---------- */
+  function showSuccess(form) {
+    var status = form.querySelector(".form-status");
+    status.className = "form-status ok";
+    status.textContent = "Thank you! Your message has been received.";
+    form.reset();
+  }
+
+  function showError(form) {
+    var status = form.querySelector(".form-status");
+    status.className = "form-status err";
+    status.textContent = "Something went wrong. Please try again.";
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    var form = e.target;
+    var name = form.querySelector('input[name="name"]').value.trim();
+    var email = form.querySelector('input[name="email"]').value.trim();
+    var phone = form.querySelector('input[name="phone"]').value.trim();
+
+    if (!name || !email || !phone) {
+      showError(form);
+      form.querySelector(".form-status").textContent = "Please fill in name, email and phone.";
+      return;
+    }
+
+    var url = SCRIPT_URL + "?" + new URLSearchParams({ name: name, email: email, phone: phone });
+
+    fetch(url, { method: "GET", mode: "no-cors" })
+      .then(function () { showSuccess(form); })
+      .catch(function () { showError(form); });
+  }
+
+  document.getElementById("form-general").addEventListener("submit", handleSubmit);
+  document.getElementById("form-csr").addEventListener("submit", handleSubmit);
+</script>
+</body>
+</html>
